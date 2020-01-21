@@ -13,4 +13,7 @@
         left join jq_dept d on u.deptId = d.id
         limit #{start},#{length}
     </select>
+   <select id="queryUserList">
+      select * from jq_job
+   </select>
 </mapper>

@@ -21,4 +21,20 @@ public class UserServiceImpl implements UserService {
         List<User> list=userDao.queryList(page);
         page.setList(list);
     }
+
+    @Override
+    public void addUser(User user) {
+        userDao.insert(user);
+    }
+
+    @Override
+    public void delUser(Integer id) {
+        userDao.deleteById(id);
+    }
+
+    @Override
+    public List <User> queryUser() {
+        return userDao.selectList(null);
+    }
+
 }
