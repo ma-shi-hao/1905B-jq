@@ -13,7 +13,13 @@
         left join jq_dept d on u.deptId = d.id
         limit #{start},#{length}
     </select>
-   <select id="queryUserList">
-      select * from jq_job
+   <select id="queryDeptList" resultType="com.fh.bean.po.Dept">
+      select * from jq_dept
    </select>
+    <select id="queyrLeader" resultType="com.fh.bean.po.Dept" parameterType="java.lang.Integer">
+      select * from jq_dept where id=#{id}
+    </select>
+    <select id="queryUser" resultType="com.fh.bean.po.User">
+        select * from jq_user group by  deptId;
+    </select>
 </mapper>
